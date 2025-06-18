@@ -1,8 +1,9 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
+import config from '../config';
 
-const generateToken = (payload: object, secret: string, expiresIn: string) => {
-    return jwt.sign(payload, secret, { expiresIn: expiresIn as any });
+const generateToken = (payload: string | object, secret: string, expiresIn: string | number) => {
+    return jwt.sign(payload, secret, { expiresIn: expiresIn as any});
 };
 
 const verifyToken = (token: string, secret: string) => {
@@ -10,14 +11,11 @@ const verifyToken = (token: string, secret: string) => {
 };
 
 const hashPassword = async (password: string): Promise<string> => {
-    const saltRounds = Number(process.env.BCRYPT_SALT_ROUNDS) || 10;
+    const saltRounds = Number(config.bcrypt_salt_rounds) || 10;
     return await bcrypt.hash(password, saltRounds);
 };
 
-const comparePassword = async (
-    plainPassword: string,
-    hashedPassword: string
-): Promise<boolean> => {
+const comparePassword = async (plainPassword: string, hashedPassword: string): Promise<boolean> => {
     return await bcrypt.compare(plainPassword, hashedPassword);
 };
 
