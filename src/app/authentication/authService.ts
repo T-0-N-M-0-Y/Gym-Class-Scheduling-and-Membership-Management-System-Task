@@ -13,8 +13,7 @@ const loginUser = async (email: string, password: string) => {
 
     const token = AuthUtils.generateToken(
         { id: user._id, role: user.role },
-        config.secret_key!,
-    );
+        config.secret_key!);
 
     return {
         accessToken: token,

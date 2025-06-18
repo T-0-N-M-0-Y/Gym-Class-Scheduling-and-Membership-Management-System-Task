@@ -8,7 +8,7 @@ const login = async (req: Request, res: Response) => {
         res.json({
             success: true,
             statusCode: 201,
-            message: 'User Login Successfull',
+            message: 'User Logged in Successfully',
             data: result,
         })
     } catch (error) {
@@ -16,7 +16,7 @@ const login = async (req: Request, res: Response) => {
             success: false,
             statusCode: 500,
             message: "Validation error occurred.",
-            error: error
+            error: error,
         })
     }
 };
