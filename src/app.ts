@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from 'express'
 import cors from 'cors'
 import { UserRoutes } from './app/user/userRoutes'
 import { AuthRoutes } from './app/authentication/authRoutes'
+
 const app: Application = express()
 
 app.use(express.json())

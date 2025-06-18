@@ -15,8 +15,8 @@ const login = async (req: Request, res: Response) => {
         res.json({
             success: false,
             statusCode: 500,
-            message: 'Something went Wrong',
-            error: error,
+            message: "Validation error occurred.",
+            error: error
         })
     }
 };
