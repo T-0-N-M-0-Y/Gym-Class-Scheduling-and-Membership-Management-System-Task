@@ -2,9 +2,10 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import config from '../config';
 
-const generateToken = (Payload: object, secret: string) => {
-    return jwt.sign(Payload, secret, { expiresIn: '1d' });
+const generateToken = (payload: string | object, secret: string, expiresIn: string | number) => {
+    return jwt.sign(payload, secret, { expiresIn: expiresIn as any });
 };
+
 
 const verifyToken = (token: string, secret: string) => {
     return jwt.verify(token, secret);
