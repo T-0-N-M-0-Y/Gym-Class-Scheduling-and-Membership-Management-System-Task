@@ -6,20 +6,21 @@ export interface CustomRequest extends Request {
   user?: any;
 }
 
-export const authenticate = (
+export const authenticate = async (
   req: CustomRequest,
   res: Response,
   next: NextFunction
-) => {
+): Promise<void> => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return res.json({
+    res.status(401).json({
       success: false,
       statusCode: 401,
       message: 'Unauthorized access',
       errorDetails: 'No token provided',
     });
+    return;
   }
 
   const token = authHeader.split(' ')[1];
@@ -27,14 +28,14 @@ export const authenticate = (
   try {
     const decoded = jwt.verify(token, config.secret_key as string);
     req.user = decoded;
-    next();
+    next(); // ✅ pass to next middleware
   } catch (error) {
-    return res.json({
+    res.status(403).json({
       success: false,
       statusCode: 403,
       message: 'Unauthorized access',
       errorDetails: 'Invalid token',
-      error: error,
+      error,
     });
   }
 };
