@@ -22,6 +22,7 @@ export const authenticate = (req: AuthRequest, res: Response, next: NextFunction
         }
 
         const token = authHeader.split(' ')[1];
+        
         const decoded = jwt.verify(token, config.secret_key!);
 
         req.user = decoded as { _id: string; role: string };

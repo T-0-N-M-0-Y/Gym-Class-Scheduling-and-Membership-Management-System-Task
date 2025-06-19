@@ -1,8 +1,8 @@
 import { AuthUtils } from "../authentication/authUtils";
-import { User } from "./userInterface";
+import { TUser } from "./userInterface";
 import { UserModel } from "./userModel";
 
-const createUserIntoDB = async (user: User) => { //create a user
+const createUserIntoDB = async (user: TUser) => { //create a user
     const hashedPassword = await AuthUtils.hashPassword(user.password);
     user.password = hashedPassword;
     const result = await UserModel.create(user);
