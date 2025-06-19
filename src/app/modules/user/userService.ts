@@ -1,4 +1,4 @@
-import { Utils } from "../Utils";
+import { Utils } from "../../Utils";
 import { TUser } from "./userInterface";
 import { UserModel } from "./userModel";
 

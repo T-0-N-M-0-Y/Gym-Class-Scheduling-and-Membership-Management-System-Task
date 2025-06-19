@@ -1,9 +1,9 @@
 import express, { Application, Request, Response } from 'express'
 import cors from 'cors'
-import { UserRoutes } from './app/user/userRoutes'
-import { AuthRoutes } from './app/authentication/authRoutes'
+import { AuthRoutes } from './app/modules/authentication/authRoutes'
 import globalErrorHandler from './app/middleWares/errorMiddleware'
-import { AdminRoutes } from './app/admin/adminRoute'
+import { AdminRoutes } from './app/modules/admin/adminRoute'
+import { UserRoutes } from './app/modules/user/userRoutes'
 
 const app: Application = express()
 

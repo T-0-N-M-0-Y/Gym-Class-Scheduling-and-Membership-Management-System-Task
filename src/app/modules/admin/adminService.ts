@@ -1,4 +1,4 @@
-import { ApiError } from "../apiError";
+import { ApiError } from "../../apiError";
 import { UserModel } from "../user/userModel";
 import { TUpdateUserRole } from "./adminInterface";
 
@@ -8,11 +8,9 @@ const updateUserRole = async (userId: string, payload: TUpdateUserRole) => {
         { role: payload.role },
         { new: true }
     );
-
     if (!updatedUser) {
         throw new ApiError(403, `User not found or not updated. ID: ${userId}`);
     }
-
     return updatedUser;
 }
 
