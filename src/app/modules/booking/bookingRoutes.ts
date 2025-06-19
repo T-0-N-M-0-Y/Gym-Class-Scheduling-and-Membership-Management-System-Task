@@ -7,7 +7,7 @@ const router = express.Router();
 
 // ✅ Trainee-only actions
 router.post(
-  '/',
+  '/create-booking',
   authenticate,
   authorizeRoles('trainee'),
   BookingController.createBooking

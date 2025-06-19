@@ -15,8 +15,14 @@ const createSchedule = async (payload: TSchedule): Promise<TSchedule> => {
 
 const getAllSchedules = async (): Promise<TSchedulePopulated[]> => {
     const schedules = await ScheduleModel.find()
-        .populate('classId', 'name','description')
-        .populate('trainerId', 'name', 'email', 'role');
+        .populate({
+            path: 'classId',
+            populate: ['name', 'description'],
+        })
+        .populate({
+            path: 'trainerId',
+            populate: ['name', 'email', 'role'],
+        });
 
     return schedules as unknown as TSchedulePopulated[];
 };
