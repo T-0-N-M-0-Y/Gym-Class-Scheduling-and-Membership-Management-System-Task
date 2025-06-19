@@ -4,15 +4,17 @@ import { AuthRoutes } from './app/modules/authentication/authRoutes'
 import globalErrorHandler from './app/middleWares/errorMiddleware'
 import { AdminRoutes } from './app/modules/admin/adminRoute'
 import { UserRoutes } from './app/modules/user/userRoutes'
+import { ClassRoutes } from './app/modules/class/classRoutes'
 
-const app: Application = express()
+const app: Application = express();
 
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
-app.use('/users', UserRoutes)
-app.use('/auth', AuthRoutes)
+app.use('/users', UserRoutes);
+app.use('/auth', AuthRoutes);
 app.use('/admin', AdminRoutes);
+app.use('/classes', ClassRoutes);
 
 app.use(globalErrorHandler);
 
