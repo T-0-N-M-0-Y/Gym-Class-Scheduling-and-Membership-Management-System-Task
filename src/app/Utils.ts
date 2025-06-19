@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import config from '.';
+import config from './config';
 
 const hashPassword = async (password: string): Promise<string> => {
     const saltRounds = Number(config.bcrypt_salt_rounds) || 10;

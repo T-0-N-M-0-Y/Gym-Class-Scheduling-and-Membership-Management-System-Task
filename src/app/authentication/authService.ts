@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { TLoginResponse, TLoginUser } from './authInterface';
 import { UserModel } from '../user/userModel';
-import { Utils } from '../config/Utils';
+import { Utils } from '../Utils';
 import config from '../config';
 
 const loginUser = async (payload: TLoginUser): Promise<TLoginResponse> => {
