@@ -15,6 +15,7 @@ app.use('/users', UserRoutes);
 app.use('/auth', AuthRoutes);
 app.use('/admin', AdminRoutes);
 app.use('/classes', ClassRoutes);
+app.use('/schedules', ClassRoutes);
 
 app.use(globalErrorHandler);
 
