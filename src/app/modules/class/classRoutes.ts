@@ -6,7 +6,7 @@ import { ClassController } from './classController';
 const router = express.Router();
 
 router.post(
-  '/',
+  '/add-class',
   authenticate,
   authorizeRoles('admin'),
   ClassController.createClass);
