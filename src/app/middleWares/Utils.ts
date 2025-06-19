@@ -1,14 +1,5 @@
-import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import config from '../config';
-
-const generateToken = (payload: object, secret: string) => {
-    return jwt.sign(payload, secret, { expiresIn: '10d' });
-};
-
-const verifyToken = (token: string, secret: string) => {
-    return jwt.verify(token, secret);
-};
 
 const hashPassword = async (password: string): Promise<string> => {
     const saltRounds = Number(config.bcrypt_salt_rounds) || 10;
@@ -19,9 +10,7 @@ const comparePassword = async (plainPassword: string, hashedPassword: string): P
     return await bcrypt.compare(plainPassword, hashedPassword);
 };
 
-export const AuthUtils = {
-    generateToken,
-    verifyToken,
+export const Utils = {
     hashPassword,
     comparePassword,
 };

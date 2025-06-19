@@ -1,9 +1,9 @@
-import { AuthUtils } from "../authentication/authUtils";
+import { Utils } from "../middleWares/Utils";
 import { TUser } from "./userInterface";
 import { UserModel } from "./userModel";
 
 const createUserIntoDB = async (user: TUser) => { //create a user
-    const hashedPassword = await AuthUtils.hashPassword(user.password);
+    const hashedPassword = await Utils.hashPassword(user.password);
     user.password = hashedPassword;
     const result = await UserModel.create(user);
     return result;
