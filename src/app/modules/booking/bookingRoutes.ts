@@ -5,7 +5,6 @@ import { BookingController } from './bookingController';
 
 const router = express.Router();
 
-// ✅ Trainee-only actions
 router.post(
   '/create-booking',
   authenticate,
