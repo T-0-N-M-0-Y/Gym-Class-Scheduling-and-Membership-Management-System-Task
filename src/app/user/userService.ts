@@ -1,4 +1,4 @@
-import { Utils } from "../middleWares/Utils";
+import { Utils } from "../config/Utils";
 import { TUser } from "./userInterface";
 import { UserModel } from "./userModel";
 
