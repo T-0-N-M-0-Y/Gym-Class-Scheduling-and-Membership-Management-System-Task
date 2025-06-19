@@ -14,8 +14,9 @@ export const authenticate = (
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return res.status(401).json({
+    return res.json({
       success: false,
+      statusCode: 401,
       message: 'Unauthorized access',
       errorDetails: 'No token provided',
     });
@@ -28,8 +29,9 @@ export const authenticate = (
     req.user = decoded;
     next();
   } catch (error) {
-    return res.status(403).json({
+    return res.json({
       success: false,
+      statusCode: 403,
       message: 'Unauthorized access',
       errorDetails: 'Invalid token',
       error: error,

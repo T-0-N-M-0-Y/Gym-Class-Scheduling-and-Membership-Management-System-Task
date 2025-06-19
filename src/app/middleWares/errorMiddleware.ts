@@ -1,9 +1,11 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
+import config from '../config';
 
 const globalErrorHandler = (
   error: any,
   req: Request,
   res: Response,
+  next: NextFunction,
 ) => {
   const statusCode = error.statusCode || 500;
 
@@ -11,7 +13,7 @@ const globalErrorHandler = (
     success: false,
     message: error.message || 'Something went wrong',
     errorDetails: error.errorDetails || null,
-    stack: process.env.NODE_ENV === 'development' ? error.stack : undefined,
+    stack: config.node_env === 'development' ? error.stack : undefined,
   });
 };
 

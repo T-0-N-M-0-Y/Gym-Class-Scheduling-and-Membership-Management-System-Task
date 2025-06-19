@@ -12,7 +12,7 @@ const loginUser = async (payload: TLoginUser): Promise<TLoginResponse> => {
     if (!user) throw new ApiError(401, 'User not found');
 
     const isPasswordValid = await Utils.comparePassword(password, user.password);
-    if (!isPasswordValid) throw new ApiError(500, 'Invalid credentials');
+    if (!isPasswordValid) throw new ApiError(403, 'Invalid credentials');
 
     const accessToken = jwt.sign(
         { _id: user._id, role: user.role, email: user.email },
