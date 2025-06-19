@@ -5,6 +5,7 @@ import globalErrorHandler from './app/middleWares/errorMiddleware'
 import { AdminRoutes } from './app/modules/admin/adminRoute'
 import { UserRoutes } from './app/modules/user/userRoutes'
 import { ClassRoutes } from './app/modules/class/classRoutes'
+import { ScheduleRoutes } from './app/modules/schedule/scheduleRoutes'
 
 const app: Application = express();
 
@@ -15,7 +16,7 @@ app.use('/users', UserRoutes);
 app.use('/auth', AuthRoutes);
 app.use('/admin', AdminRoutes);
 app.use('/classes', ClassRoutes);
-app.use('/schedules', ClassRoutes);
+app.use('/schedules', ScheduleRoutes);
 
 app.use(globalErrorHandler);
 

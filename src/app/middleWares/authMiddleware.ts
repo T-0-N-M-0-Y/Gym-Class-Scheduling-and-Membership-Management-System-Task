@@ -5,7 +5,6 @@ import config from '../config';
 export interface CustomRequest extends Request {
   user?: any;
 }
-
 export const authenticate = async (
   req: CustomRequest,
   res: Response,
@@ -28,7 +27,7 @@ export const authenticate = async (
   try {
     const decoded = jwt.verify(token, config.secret_key as string);
     req.user = decoded;
-    next(); // ✅ pass to next middleware
+    next();
   } catch (error) {
     res.status(403).json({
       success: false,
