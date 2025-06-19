@@ -5,7 +5,6 @@ import { AdminController } from './adminController';
 
 const router = express.Router();
 
-// ✅ Admin updates any user's role
 router.patch(
     '/update-role/:userId',
     authenticate,

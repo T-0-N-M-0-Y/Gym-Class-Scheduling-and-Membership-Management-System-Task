@@ -47,7 +47,7 @@ const getSingleUser = async (req: Request, res: Response) => { //get One data fr
         res.json({
             success: true,
             statusCode: 201,
-            message: 'All Users collected Successfully',
+            message: 'User collected Successfully',
             data: result,
         })
     } catch (error) {
