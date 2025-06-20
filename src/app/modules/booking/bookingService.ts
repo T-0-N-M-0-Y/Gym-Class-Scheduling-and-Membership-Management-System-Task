@@ -6,7 +6,7 @@ import { BookingModel } from "./bookingModel";
 const createBooking = async (userId: string, scheduleId: string): Promise<TBooking> => {
     const exists = await BookingModel.findOne({
         traineeId: userId,
-        scheduleId,
+        scheduleId: scheduleId,
     });
     if (exists) {
         throw new ApiError(400, 'You have already booked this schedule.');
@@ -17,7 +17,7 @@ const createBooking = async (userId: string, scheduleId: string): Promise<TBooki
     }
     return await BookingModel.create({
         traineeId: userId,
-        scheduleId,
+        scheduleId: scheduleId
     });
 }
 

@@ -3,7 +3,6 @@ import { ScheduleService } from './scheduleService';
 
 const createSchedule = async (req: Request, res: Response) => {
     const result = await ScheduleService.createSchedule(req.body);
-
     res.status(201).json({
         success: true,
         statusCode: 201,
@@ -14,7 +13,6 @@ const createSchedule = async (req: Request, res: Response) => {
 
 const getAllSchedules = async (req: Request, res: Response) => {
     const result = await ScheduleService.getAllSchedules();
-
     res.status(200).json({
         success: true,
         statusCode: 200,
