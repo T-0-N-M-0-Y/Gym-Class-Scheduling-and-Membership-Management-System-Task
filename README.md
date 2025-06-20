@@ -59,4 +59,55 @@ The system enforces:
 ## 📊 Relational Diagram
 ![WhatsApp Image 2025-06-19 at 12 46 57_e45c1f15](https://github.com/user-attachments/assets/758aa71d-274d-4f55-8fc8-4e183cf70bc4)
 
+---
+## 🧬 Database Schema (Model Definitions)
 
+### 👤 User Model
+{
+    name: string;
+    email: string;
+    password: string;
+    contactNo: number;
+    profileImg?: string;
+    role: 'admin' | 'trainer' | 'trainee';
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+### 👤 admin Model
+{
+role: 'admin' | 'trainer';
+}
+
+### 👤 auth Model
+{
+  email: string;
+  password: string;
+  accessToken: string;
+  user: {
+    _id: string;
+    role: 'admin' | 'trainer' | 'trainee';
+    email: string;
+  };
+}
+
+### 👤 class Model
+{
+  name: string;
+  description: string;
+}
+
+### 👤 schedule Model
+{
+    classId: Types.ObjectId;
+    trainerId: Types.ObjectId;
+    classDate: string;
+    startTime: string;
+    endTime: string;
+}
+
+### 👤 booking Model
+{
+  traineeId: Types.ObjectId;
+  scheduleId: Types.ObjectId;
+}
