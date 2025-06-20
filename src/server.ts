@@ -4,6 +4,7 @@ import config from './app/config';
 
 async function main(){
   try {
+    
     await mongoose.connect(config.database_uri as string);
 
     app.listen(config.port, () => {
