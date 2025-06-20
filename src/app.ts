@@ -19,7 +19,6 @@ app.use('/admin', AdminRoutes);
 app.use('/classes', ClassRoutes);
 app.use('/schedules', ScheduleRoutes);
 app.use('/booking', BookingRoutes);
-
 app.use(globalErrorHandler);
 
 app.get('/', (req: Request, res: Response) => {
