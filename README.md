@@ -10,6 +10,12 @@ It supports Admin, Trainer, and Trainee roles — with class scheduling, booking
 🔗 [https://your-vercel-api.vercel.app](https://your-vercel-api.vercel.app)  
 
 ---
+🔐 Admin Credentials (for Testing)
+
+Email: admintest@gmail.com
+Password: admin1234
+
+---
 
 ## 🧾 Project Overview
 
@@ -111,12 +117,6 @@ role: 'admin' | 'trainer';
   traineeId: Types.ObjectId;
   scheduleId: Types.ObjectId;
 }
-
----
-🔐 Admin Credentials (for Testing)
-
-Email: admintest@gmail.com
-Password: admin1234
 
 ---
 ## 🧪 Instructions to Run Locally
