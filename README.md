@@ -56,4 +56,7 @@ The system enforces:
 | DELETE | `/booking/cancel/:id`               | trainee  | ❌ Cancel a booking                     |
 
 ---
+## 📊 Relational Diagram
+![WhatsApp Image 2025-06-19 at 12 46 57_e45c1f15](https://github.com/user-attachments/assets/758aa71d-274d-4f55-8fc8-4e183cf70bc4)
+
 
