@@ -138,7 +138,7 @@ This system is built to manage gym class scheduling efficiently.
 🧪 Instructions to Run Locally:
 
 1️⃣ Clone the Repository:
-git clone https://github.com/T-0-N-M-0-Y/Gym-Class-Scheduling-and-Membership-Management-System-Task.git
+git clone https://github.com/T-0-N-M-0-Y/Gym-Class-Scheduling-and-Membership-Management-System-Task
 cd Gym-Class-Scheduling-and-Membership-Management-System-Task
 
 2️⃣ Install Dependencies
