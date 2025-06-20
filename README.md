@@ -20,7 +20,8 @@ JWT	Authentication and Authorization
 Vercel Deployment Platform
 
 📊 Relational Diagram (ERD)
-Link:
+Link: ![WhatsApp Image 2025-06-19 at 12 46 57_eb166f9a](https://github.com/user-attachments/assets/bbcf1eb2-3bb6-40a0-8adb-8092b2517f81)
+
 
 🔗 API Endpoints
 Method      Endpoint      ~ Role	~ Description
