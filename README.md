@@ -1,7 +1,7 @@
 # 🏋️ Gym Class Scheduling and Membership Management System
 
 A role-based gym management backend system built with **TypeScript**, **Express.js**, **MongoDB**, and **JWT** authentication.  
-It supports Admin, Trainer, and Trainee roles — with class scheduling, booking, and profile features.
+It supports Admin, Trainer, and Trainee roles — with class scheduling, booking.
 
 ---
 
