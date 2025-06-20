@@ -39,4 +39,21 @@ The system enforces:
 | JWT            | Auth system for secure access       |
 | Vercel         | Live API Hosting Platform           |
 
+---
+## 📚 API Endpoints
+
+| Method | Endpoint                            | Role     | Description                             |
+|--------|-------------------------------------|----------|-----------------------------------------|
+| POST   | `/auth/login`                       | all      | 🔐 User Login                           |
+| POST   | `/users/create-user`                | all      | 👤 Create new user (trainee)            |
+| PATCH  | `/admin/update-role/:id`            | admin    | Update a user to trainer or admin       |
+| POST   | `/classes/add-class`                | admin    | 🏋️ Create a new class                   |
+| GET    | `/classes/all-classes`              | all      | 📖 Get all available classes            |
+| POST   | `/schedules/create-schedules`       | admin    | 📅 Create schedule (max 5/day)          |
+| GET    | `/schedules/all-schedules`          | all      | 📆 Get all schedules                    |
+| POST   | `/booking/create-booking`           | trainee  | 📝 Book a schedule (max 10 trainees)    |
+| GET    | `/booking/my-bookings`              | trainee  | 👀 View own bookings                    |
+| DELETE | `/booking/cancel/:id`               | trainee  | ❌ Cancel a booking                     |
+
+---
 
