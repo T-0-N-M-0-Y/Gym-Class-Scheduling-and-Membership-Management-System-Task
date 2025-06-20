@@ -11,6 +11,6 @@ router.post(
   authorizeRoles('admin'),
   ClassController.createClass);
 
-router.get('/', ClassController.getAllClasses);
+router.get('/all-classes', ClassController.getAllClasses);
 
 export const ClassRoutes = router;
