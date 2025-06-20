@@ -2,7 +2,6 @@ import { ApiError } from "../../apiError";
 import { TSchedule } from "./scheduleInterface";
 import { ScheduleModel } from "./scheduleModel";
 
-
 const createSchedule = async (payload: TSchedule): Promise<TSchedule> => {
     const sameDaySchedules = await ScheduleModel.countDocuments({
         classDate: payload.classDate,
