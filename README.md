@@ -8,7 +8,7 @@ It supports **Admin**, **Trainer**, and **Trainee** roles — with class schedul
 
 ## 🌐 Live Hosting Link
 
-🔗 [https://your-vercel-api.vercel.app](https://your-vercel-api.vercel.app)
+🔗 https://gym-class-scheduling-and-membership-self.vercel.app
 
 ---
 
