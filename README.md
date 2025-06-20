@@ -33,6 +33,7 @@ This system is built to manage gym class scheduling efficiently.
   - View assigned schedules
 
 - **Trainee**:
+  - View and Update Own Profile
   - Book schedules (max **10 per class**)
   - Cancel bookings
 
@@ -60,10 +61,12 @@ This system is built to manage gym class scheduling efficiently.
 
 ## 📚 API Endpoints
 
-| Method | Endpoint                      | Role      | Description                            |
-|--------|-------------------------------|-----------|----------------------------------------|
-| POST   | `/auth/login`                | all       | 🔐 User Login                           |
+| Method | Endpoint                     | Role      | Description                            |
+|--------|------------------------------|-----------|----------------------------------------|
+| POST   | `/auth/login`                | all       | 🔐 User Login                          |
 | POST   | `/users/create-user`         | all       | 👤 Create new user (trainee)            |
+| POST   | `/users/userId`              | trainee   | 👤 View own Profile (trainee)           |
+| POST   | `/users/update-user/:userId` | trainee   | 👤 Update Own Profile (trainee)         |
 | PATCH  | `/admin/update-role/:id`     | admin     | 🛠️ Update user to trainer or admin      |
 | POST   | `/classes/add-class`         | admin     | 🏋️ Create a new class                   |
 | GET    | `/classes/all-classes`       | all       | 📖 Get all available classes            |
