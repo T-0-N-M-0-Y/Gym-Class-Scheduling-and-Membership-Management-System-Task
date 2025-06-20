@@ -84,7 +84,7 @@ This system is built to manage gym class scheduling efficiently.
 
 ## 🧬 Database Schema (Model Definitions)
 
-### 👤 User Model
+### 👤 User Model:
 {
   name: string;
   email: string;
@@ -95,3 +95,66 @@ This system is built to manage gym class scheduling efficiently.
   createdAt: Date;
   updatedAt: Date;
 }
+
+### 👤 Admin Model:
+{
+  role: 'admin' | 'trainer';
+}
+
+### 👤 auth Model:
+{
+  email: string;
+  password: string;
+  accessToken: string;
+  user: {
+    _id: string;
+    role: 'admin' | 'trainer' | 'trainee';
+    email: string;
+  };
+}
+
+### 👤 class Model:
+{
+  name: string;
+  description: string;
+}
+
+### 👤 schedule Model:
+{
+  classId: Types.ObjectId;
+  trainerId: Types.ObjectId;
+  classDate: string;
+  startTime: string;
+  endTime: string;
+}
+
+### 👤 booking Model:
+{
+  traineeId: Types.ObjectId;
+  scheduleId: Types.ObjectId;
+}
+
+...
+🧪 Instructions to Run Locally:
+
+1️⃣ Clone the Repository:
+git clone https://github.com/T-0-N-M-0-Y/Gym-Class-Scheduling-and-Membership-Management-System-Task.git
+cd Gym-Class-Scheduling-and-Membership-Management-System-Task
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Create Environment File:
+Create a .env file in the root directory and add:
+NODE_ENV=development
+PORT=5000
+DATABASE_URI=mongodb+srv://mongooseANDtypescript:admin12345@cluster0.ddbcqih.mongodb.net/mongooseANDtypescript?retryWrites=true&w=majority&appName=Cluster0
+BCRYPT_SALT_ROUNDS=15
+SECRET_KEY=b3357c864db8de2012719a835b6a5013ddd44671edf70a7a3aba274e5fee83b097525cf92132ebc92b3a3c0a4669a2000615b982fb4711ff067245744501a516
+
+4️⃣ Build and Run the Server:
+npm run build
+npm run start:dev
+
+Your server will start at:
+📍 http://localhost:5000
