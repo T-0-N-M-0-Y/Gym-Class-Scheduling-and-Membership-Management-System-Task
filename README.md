@@ -24,7 +24,7 @@ It includes:
 
 - **Admin**: Create classes, assign trainers, schedule up to 5 classes per day.
 - **Trainer**: View assigned schedules.
-- **Trainee**: Book schedules (max 10 per class), cancel bookings, manage own profile.
+- **Trainee**: Book schedules (max 10 per class), cancel bookings.
 
 The system enforces:
 - Max **5 schedules per day**
