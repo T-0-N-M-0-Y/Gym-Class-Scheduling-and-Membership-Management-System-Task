@@ -20,14 +20,11 @@ const getOneUserFromDB = async (_id: string) => {
     return result;
 }
 
-const updateUserData = async (userId: string, payload: TUser) => {
+const updateUserData = async (_id: string, payload: TUser) => {
     const updatedUser = await UserModel.findByIdAndUpdate(
-        userId,
-        { ...payload },
-        { new: true, runValidators: true }
-    );
+        _id, { ...payload }, { new: true, runValidators: true });
     if (!updatedUser) {
-        throw new ApiError(403, `User not found or not updated. ID: ${userId}`);
+        throw new ApiError(403, `User not found or not updated. ID: ${_id}`);
     }
     return updatedUser;
 }
