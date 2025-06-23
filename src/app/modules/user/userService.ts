@@ -20,7 +20,7 @@ const getOneUserFromDB = async (_id: string) => {
     return result;
 }
 
-const updateUserData = async (_id: string, payload: TUser) => {
+const updateUserData = async (_id: string, payload: Partial<TUser>) => {
     const updatedUser = await UserModel.findByIdAndUpdate(
         _id, { ...payload }, { new: true, runValidators: true });
     if (!updatedUser) {
