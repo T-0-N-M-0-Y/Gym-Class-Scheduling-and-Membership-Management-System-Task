@@ -1,4 +1,3 @@
-import { ApiError } from "../../apiError";
 import { Utils } from "../../Utils";
 import { TUser } from "./userInterface";
 import { UserModel } from "./userModel";
@@ -20,18 +19,18 @@ const getOneUserFromDB = async (_id: string) => {
     return result;
 }
 
-const updateUserData = async (_id: string, payload: Partial<TUser>) => {
-    const updatedUser = await UserModel.findByIdAndUpdate(
-        _id, { ...payload }, { new: true, runValidators: true });
-    if (!updatedUser) {
-        throw new ApiError(403, `User not found or not updated. ID: ${_id}`);
+const updateUserInDB = async (_id: string, updateData: Partial<TUser>) => {
+    if (updateData.password) {
+        updateData.password = await Utils.hashPassword(updateData.password);
     }
-    return updatedUser;
-}
+    const result = await UserModel.findOneAndUpdate({ _id }, updateData, { new: true });
+    return result;
+};
+
 
 export const UserServices = {
     createUserIntoDB,
     getAllUsersFromDB,
     getOneUserFromDB,
-    updateUserData
+    updateUserInDB
 }
